@@ -1,0 +1,10 @@
+.cirle-shape {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.circle-shape--yellow {
+  background-color: yellow;
+}

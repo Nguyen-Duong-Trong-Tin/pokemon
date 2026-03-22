@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <section
+      id="event-handling"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h1>Event handling ({{ count }})</h1>
+      <br />
+
+      <p>Count: {{ count }}</p>
+      <p v-once>This tag is using v-once: {{ count }}</p>
+
+      <button class="btn btn-success mb-3" v-on:click="handleClickMe">
+        Click me
+      </button>
+      <br />
+
+      <button class="btn btn-primary mb-3" v-on:click="handleIncrease(10)">
+        +
+      </button>
+
+      <button class="btn btn-primary mb-3" @click="count += 1">
+        + (Don't use function)
+      </button>
+
+      <form action="" v-on:submit.prevent="handleSubmit">
+        <button class="btn btn-success">Submit</button>
+      </form>
+
+      <form action="" v-on:submit.prevent="handleLogin">
+        <h1>Login</h1>
+
+        <div class="form-group">
+          <label for="">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            v-on:keyup.enter="handleLogin"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            @keyup.enter="handleLogin"
+          />
+        </div>
+      </form>
+    </section>
+
+    <section
+      id="two-way-binding"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h1>Two way binding</h1>
+      <br />
+
+      <form action="">
+        <div class="form-group">
+          <label for="">Message</label>
+          <input type="text" class="form-control" v-model="message" />
+        </div>
+
+        <p class="alert alert-success">Message: {{ message }}</p>
+      </form>
+    </section>
+
+    <section
+      id="computed-and-watch"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h1>Computed and watch</h1>
+      <br />
+
+      <p>Count: {{ count }}</p>
+      <button class="btn btn-primary mb-3" @click="increseCount">
+        Increase count
+      </button>
+
+      <p class="alert alert-success">{{ fullName }}</p>
+    </section>
+
+    <section
+      id="styling"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h1>Styling</h1>
+      <br />
+
+      <p :style="[styleForP, styleForText]">Hello</p>
+
+      <button class="btn btn-primary" @click="handleFormat">Format</button>
+
+      <div
+        class="cirle-shape"
+        :class="{ 'circle-shape--yellow': active }"
+      ></div>
+      <button class="btn btn-primary" @click="handleActive">Active</button>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
