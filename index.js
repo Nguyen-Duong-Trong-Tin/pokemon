@@ -131,3 +131,44 @@ Vue.createApp({
     },
   },
 }).mount("#styling");
+
+Vue.createApp({
+  data() {
+    return {
+      isLogin: false,
+      champion: "",
+    };
+  },
+  methods: {
+    handleLogin() {
+      this.isLogin = true;
+    },
+    pickChampion(champion) {
+      this.champion = champion;
+    },
+  },
+}).mount("#directive");
+
+Vue.createApp({
+  data() {
+    return {
+      listOfSingers: [
+        {
+          name: "Lisa",
+          imageUrl:
+            "https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/12/30/866476/Lisa-Blackpink-3.jpg",
+        },
+        {
+          name: "Rose",
+          imageUrl:
+            "https://www.billboard.com/wp-content/uploads/2025/05/ROSE-met-gala-carpet-2025-billboard-1548.jpg",
+        },
+        {
+          name: "Jie",
+          imageUrl:
+            "https://cafefcdn.com/203337114487263232/2025/6/30/rose-3-55495278928390660096590-1751246769423-17512467696231247356770.png",
+        },
+      ],
+    };
+  },
+}).mount("#list-rendering");
