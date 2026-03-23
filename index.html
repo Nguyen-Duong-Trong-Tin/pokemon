@@ -21,6 +21,51 @@
   </head>
   <body>
     <section
+      id="interpolation"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h2>Interpolation</h2>
+      <hr />
+
+      <p>fullname: {{ fullName }}</p>
+      <p>class: {{ myClass }}</p>
+    </section>
+
+    <section
+      id="bind-attribute"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h2>Bind-attribute</h2>
+      <hr />
+
+      <img v-bind:src="imageUrl" alt="Anime" class="img-thumbnail" />
+
+      <a v-bind:href="wikiUrl" target="_blank" class="btn btn-info"
+        >Jack97 Information</a
+      >
+    </section>
+
+    <section
+      id="method"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h2>Method</h2>
+      <hr />
+
+      <p>Tai hay Xiu: {{ renderTaiHayXiu() }}</p>
+    </section>
+
+    <section
+      id="raw-html"
+      class="bg-dark p-3 rounded text-center text-light mb-3"
+    >
+      <h2>Raw HTML</h2>
+      <hr />
+
+      <div v-html="message"></div>
+    </section>
+
+    <section
       id="event-handling"
       class="bg-dark p-3 rounded text-center text-light mb-3"
     >
